@@ -1,0 +1,22 @@
+[package]
+name = "suiroll"
+version = "0.1.0"
+
+[dependencies]
+Sui = { git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework/packages/sui-framework", rev = "framework/mainnet" }
+
+[addresses]
+suiroll = "0x0"
+sui =  "0000000000000000000000000000000000000000000000000000000000000002"
+
+# Used in tests. We have to declare these values here as well so they can be filled in the [dev-addresses] section
+# admin = "_"
+# treasury = "_"
+# player_1 = "_"
+# player_2 = "_"
+
+[dev-addresses]
+admin = "0xab"
+treasury = "0xbc"
+player_1 = "0xcd"
+player_2 = "0xde"

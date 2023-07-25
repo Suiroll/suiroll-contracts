@@ -1,0 +1,14 @@
+{
+  "name": "suiroll",
+  "version": "1.0.0",
+  "description": "suiroll",
+  "type": "module",
+  "scripts": {
+    "deploy": "node ./scripts/deploy.js",
+    "fundHouse": "node ./scripts/fundHouse.js"
+  },
+  "author": "",
+  "dependencies": {
+    "@mysten/sui.js": "^0.36.0"
+  }
+}

@@ -2,4 +2,5 @@ build
 keys
 DevNotes.md
 config.json
+config.mainnet.json
 node_modules

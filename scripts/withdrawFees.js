@@ -8,25 +8,22 @@ import {
 import config from "./config.json" assert { type: "json" }
 import publish_result from "./publish_result.json" assert { type: "json" }
 
-const {
-  privateKey, topupAmount,
-} = config;
+const {privateKey} = config;
 
 const secretKey = Uint8Array.from(Buffer.from(privateKey, "hex"));
 const keypair = Ed25519Keypair.fromSecretKey(secretKey);
 const provider = new JsonRpcProvider(localnetConnection);
 const signer = new RawSigner(keypair, provider);
 
-const fundHouse = async () => {
+const withdrawFees = async () => {
   const txb = new TransactionBlock()
 
-  const [houseTopupCoin] = txb.splitCoins(txb.gas, [txb.pure(topupAmount)]);
   txb.moveCall({
-    target: `${publish_result.packageId}::suiroll::fund_house`,
+    target: `${publish_result.packageId}::suiroll::withdraw_fees`,
     typeArguments: ["0x2::sui::SUI"],
     arguments: [
+      txb.object(publish_result.adminCapId),
       txb.object(publish_result.houseId),
-      houseTopupCoin,
     ],
   });
 
@@ -41,9 +38,9 @@ const fundHouse = async () => {
 }
 
 const main = async () => {
-  await fundHouse();
+  await withdrawFees();
 }
 
 main()
-.then(() => console.log("House was funded"))
+.then(() => console.log("Fees sent to treasury account"))
 .catch((error) => console.log("Error: ", error))

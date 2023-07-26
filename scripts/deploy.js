@@ -107,8 +107,8 @@ const main = async () => {
   const houseId = initHouseResult.objectChanges.find(o => o.objectType === `${packageId}::suiroll::House<0x2::sui::SUI>`).objectId;
 
   const data = {
-    packageId,
     adminCapId,
+    packageId,
     configId,
     houseId,
   };

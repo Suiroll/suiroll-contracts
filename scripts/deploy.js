@@ -18,8 +18,6 @@ const keypair = Ed25519Keypair.fromSecretKey(secretKey);
 const provider = new JsonRpcProvider(localnetConnection);
 const signer = new RawSigner(keypair, provider);
 
-const fromHexString = (hexString) => Uint8Array.from(hexString.match(/.{1,2}/g).map((byte) => parseInt(byte, 16)));
-
 const publish = async () => {
   const cliPath = "sui";
   const packagePath = "sources";

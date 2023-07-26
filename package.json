@@ -7,7 +7,8 @@
     "deploy": "node ./scripts/deploy.js",
     "fundHouse": "node ./scripts/fundHouse.js",
     "withdrawFees": "node ./scripts/withdrawFees.js",
-    "withdrawHouseBalance": "node ./scripts/withdrawHouseBalance.js"
+    "withdrawHouseBalance": "node ./scripts/withdrawHouseBalance.js",
+    "refundGame": "node ./scripts/refundGame.js"
   },
   "author": "",
   "dependencies": {

@@ -15,7 +15,7 @@ module suiroll::suiroll {
   // Constants
 
   /// This is how long (1 days in milliseconds) should pass for the user to get a refund if server doesn't submit the result
-  const REFUND_AFTER: u64 = 86400000;
+  const REFUND_AFTER: u64 = 120000;
   const BASIS_POINTS: u64 = 10_000;
 
   // Errors
